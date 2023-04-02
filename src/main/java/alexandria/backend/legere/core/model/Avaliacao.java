@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 public class Avaliacao {
 	
 	@Id @GeneratedValue
-	@Column(name="ID") private Long id;
+	@Column(name="ID") private Long sequencial;
 	
 	@Column(name="Comment") private String cometario;
 
@@ -23,12 +23,12 @@ public class Avaliacao {
 
 
 
-	public Long getId() {
-		return id;
+	public Long getSequencial() {
+		return sequencial;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setSequencial(Long id) {
+		this.sequencial = id;
 	}
 
 	public String getCometario() {
@@ -64,7 +64,7 @@ public class Avaliacao {
 	}
 	public Avaliacao() {}
 	public Avaliacao(Long id, String cometario, Integer satisfacao, String recomendacao, Long fkIdRegistro) {
-		this.id = id;
+		this.sequencial = id;
 		this.cometario = cometario;
 		this.satisfacao = satisfacao;
 		this.recomendacao = recomendacao;

@@ -7,4 +7,5 @@ import alexandria.backend.legere.core.model.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
+	public Usuario findBySequencialAndHashPassword(Long id, String hash);
 }

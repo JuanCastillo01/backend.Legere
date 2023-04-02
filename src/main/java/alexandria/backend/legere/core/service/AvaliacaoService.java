@@ -10,5 +10,4 @@ public interface AvaliacaoService {
 	public  Avaliacao alterar(Avaliacao entity,Long id);
 	public  List<Avaliacao> listar();
 	public  List<Avaliacao> filtrarPorRegistro(Long id);
-	public  List<Avaliacao> filtrarPorNomeDoLivro(String nome);	
 }

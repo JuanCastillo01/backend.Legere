@@ -27,7 +27,7 @@ public class AvaliacaoServiceImpl implements AvaliacaoService{
 
 	@Override
 	public Avaliacao alterar(Avaliacao entity, Long id) {
-		entity.setId(id);
+		entity.setSequencial(id);
 		return repositorio.save(entity);
 	}
 
@@ -39,12 +39,6 @@ public class AvaliacaoServiceImpl implements AvaliacaoService{
 	@Override
 	public List<Avaliacao> filtrarPorRegistro(Long id) {
 		return repositorio.findByFkIdRegistro(id);
-	}
-
-	@Override
-	public List<Avaliacao> filtrarPorNomeDoLivro(String nome) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

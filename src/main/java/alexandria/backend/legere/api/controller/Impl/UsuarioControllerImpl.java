@@ -1,4 +1,4 @@
-package alexandria.backend.legere.api.controller.Impl;
+package alexandria.backend.legere.api.controller.impl;
 
 import java.util.List;
 

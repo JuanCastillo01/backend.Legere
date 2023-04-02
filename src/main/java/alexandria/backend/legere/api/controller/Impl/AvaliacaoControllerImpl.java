@@ -1,7 +1,8 @@
-package alexandria.backend.legere.api.controller.Impl;
+package alexandria.backend.legere.api.controller.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,12 +21,9 @@ import alexandria.backend.legere.core.service.AvaliacaoService;
 @RestController
 @RequestMapping("/api/aval")
 public class AvaliacaoControllerImpl implements AvaliacaoController{
-	
+
+	@Autowired
 	private AvaliacaoService servico;
-	
-	public AvaliacaoControllerImpl(AvaliacaoService servico) {
-		this.servico = servico;
-	}
 	
 	@PostMapping
 	public Avaliacao savarAvaliacao(@RequestBody Avaliacao entity) {
