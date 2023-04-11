@@ -13,14 +13,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import alexandria.backend.legere.api.controller.RegistroLivroController;
 import alexandria.backend.legere.core.model.RegistroLivro;
 import alexandria.backend.legere.core.service.RegistroLivroService;
 
 @CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/api/register")
-public class RegistroLivroControllerImpl implements RegistroLivroController{
+public class RegistroLivroControllerImpl{
 
 	@Autowired
 	private RegistroLivroService servico;

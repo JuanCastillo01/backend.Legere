@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="ARCHIVED_BOOKS", schema="QUE_LIVRO")
+@Table(name="ARCHIVED_BOOKS")
 public class RegistroLivro {
 
 	@Id

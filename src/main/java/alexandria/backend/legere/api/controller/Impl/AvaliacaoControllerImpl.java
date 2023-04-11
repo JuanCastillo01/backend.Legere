@@ -13,14 +13,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import alexandria.backend.legere.api.controller.AvaliacaoController;
 import alexandria.backend.legere.core.model.Avaliacao;
 import alexandria.backend.legere.core.service.AvaliacaoService;
 
 @CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/api/aval")
-public class AvaliacaoControllerImpl implements AvaliacaoController{
+public class AvaliacaoControllerImpl{
 
 	@Autowired
 	private AvaliacaoService servico;

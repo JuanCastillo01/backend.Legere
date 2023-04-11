@@ -3,6 +3,7 @@ package alexandria.backend.legere.api.controller.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,20 +14,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import alexandria.backend.legere.api.controller.QueLivroEntryController;
 import alexandria.backend.legere.core.model.QueLivroEntry;
 import alexandria.backend.legere.core.service.QueLivroEntryService;
 
 @CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/api/quelivro")
-public class QueLivroEntryControllerImpl implements QueLivroEntryController {
+public class QueLivroEntryControllerImpl {
 
 	@Autowired
 	private QueLivroEntryService servico;
 	
 	@GetMapping("/nome/{nome}")
-	public List<QueLivroEntry>  filtrarPorNome(@PathVariable String nome) {
+	public List<QueLivroEntry> filtrarPorNome(@PathVariable String nome) {
 		return servico.listarEntradasPorNome(nome);
 	}
 
@@ -41,7 +41,7 @@ public class QueLivroEntryControllerImpl implements QueLivroEntryController {
 	}
 
 	@PostMapping
-	public QueLivroEntry salvarEntrada(QueLivroEntry entidade) {
+	public QueLivroEntry salvarEntrada(@RequestBody QueLivroEntry entidade) {
 		return servico.criarNovaEntrada(entidade);
 	}
 

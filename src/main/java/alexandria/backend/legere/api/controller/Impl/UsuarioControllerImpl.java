@@ -14,14 +14,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import alexandria.backend.legere.api.controller.UsuarioController;
 import alexandria.backend.legere.core.model.Usuario;
 import alexandria.backend.legere.core.service.UsuarioService;
 
 @CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/api/Usuario/")
-public class UsuarioControllerImpl implements UsuarioController {
+public class UsuarioControllerImpl {
 
 	private UsuarioService servico;
 	
