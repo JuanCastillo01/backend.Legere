@@ -36,9 +36,4 @@ public class AvaliacaoServiceImpl implements AvaliacaoService{
 		return repositorio.findAll();
 	}
 
-	@Override
-	public List<Avaliacao> filtrarPorRegistro(Long id) {
-		return repositorio.findByFkIdRegistro(id);
-	}
-
 }

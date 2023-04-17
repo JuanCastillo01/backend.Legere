@@ -44,9 +44,5 @@ public class AvaliacaoControllerImpl{
 		return servico.listar();
 	}
 
-	@GetMapping("/{id}")
-	public List<Avaliacao>listarAvaliacoesDeRegistro(@PathVariable Long id) {
-		return servico.filtrarPorRegistro(id);
-	}
 
 }

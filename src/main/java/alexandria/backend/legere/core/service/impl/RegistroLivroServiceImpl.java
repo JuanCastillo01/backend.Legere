@@ -1,5 +1,6 @@
 package alexandria.backend.legere.core.service.impl;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,25 +14,30 @@ public class RegistroLivroServiceImpl implements RegistroLivroService{
 	@Autowired
 	private RegistroLivroRepository repositorio;
 	
-	@Override
-	public List<RegistroLivro> listarLivroAoBacklog() {
+	public List<RegistroLivro> listarLivroBacklog() {
 		return repositorio.findAll();
 	}
-
-	@Override
-	public RegistroLivro adicionarLivroAoBacklog(RegistroLivro entidade) {
+	
+	public RegistroLivro adicionarLivroBacklog(Long idLivro){
+		RegistroLivro entidade = new RegistroLivro(); 
+		entidade.setEntradaLivro(idLivro);
+		entidade.setExecutado("I");
 		return repositorio.save(entidade);
 	}
 
-	@Override
-	public RegistroLivro alterarLivroAoBacklog(RegistroLivro entidade, Long id) {
-		entidade.setSequencial(id);
-		return repositorio.save(entidade);
-	}
-
-	@Override
-	public void excluirLivroAoBacklog(Long id) {
+	public void excluirLivroBacklog(Long id) {
 		repositorio.deleteById(id);
 	}
 
+	public RegistroLivro extrairLivroBacklog() {
+		List<RegistroLivro> listaIdle = repositorio.findAllByExecutado("I").orElse(Collections.emptyList());
+		Long min = listaIdle.stream().map(RegistroLivro::getSequencial).min(Long::compareTo).orElse(null);
+		return repositorio.findById(min).orElse(new RegistroLivro());
+	}
+
+	public RegistroLivro executadoLivroBacklog(Long id){
+		RegistroLivro registroUsado = repositorio.findById(id).orElse(new RegistroLivro());
+		registroUsado.setExecutado("R");
+		return repositorio.save(registroUsado);
+	}
 }

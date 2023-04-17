@@ -24,25 +24,26 @@ public class RegistroLivroControllerImpl{
 	@Autowired
 	private RegistroLivroService servico;
 	
-	@GetMapping
-	public List<RegistroLivro> listarRegistroLivro() {
-		return servico.listarLivroAoBacklog();
+	@GetMapping("/todos")
+	public List<RegistroLivro> listarRegistrosLivro() {
+		return servico.listarLivroBacklog();
 	}
-
-	@PostMapping
-	public RegistroLivro salvarRegistroLivro(@RequestBody RegistroLivro dto) {
-		return servico.adicionarLivroAoBacklog(dto);
+	
+	@PostMapping("/{idLivro}")
+	public RegistroLivro salvarRegistroLivro(@PathVariable Long idLivro) {
+		return servico.adicionarLivroBacklog(idLivro);
 	}
 
 	@DeleteMapping("/{id}")
 	public void deletarRegistroLivro(@PathVariable Long id) {
-		servico.excluirLivroAoBacklog(id);
+		servico.excluirLivroBacklog(id);
 		
 	}
 
 	@PutMapping("/{id}")
-	public RegistroLivro alterarRegistroLivro(@RequestBody RegistroLivro dto,@PathVariable Long id) {
-		return servico.alterarLivroAoBacklog(dto, id);
+	public RegistroLivro marcarRegistro(@PathVariable Long id){
+		return servico.executadoLivroBacklog(id);
+		
 	}
 	
 }

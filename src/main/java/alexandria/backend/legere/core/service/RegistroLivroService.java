@@ -5,8 +5,10 @@ import java.util.List;
 import alexandria.backend.legere.core.model.RegistroLivro;
 
 public interface RegistroLivroService {
-	public List<RegistroLivro> listarLivroAoBacklog();
-	public RegistroLivro adicionarLivroAoBacklog(RegistroLivro entidade);
-	public RegistroLivro alterarLivroAoBacklog(RegistroLivro entidade,Long id);
-	public void excluirLivroAoBacklog(Long id);
+	public List<RegistroLivro> listarLivroBacklog();
+	public RegistroLivro adicionarLivroBacklog(Long id_livro);
+	public void excluirLivroBacklog(Long id);
+	
+	public RegistroLivro extrairLivroBacklog();
+	public RegistroLivro executadoLivroBacklog(Long id);
 }

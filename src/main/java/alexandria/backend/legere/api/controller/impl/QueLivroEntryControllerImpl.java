@@ -3,7 +3,6 @@ package alexandria.backend.legere.api.controller.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,8 +33,14 @@ public class QueLivroEntryControllerImpl {
 	public QueLivroEntry filtrarPorId(@PathVariable Long id) {
 		return servico.encontrarPorSequencial(id);
 	}
-
+	
 	@GetMapping
+	public QueLivroEntry obterEntradaDiaria() {
+		return servico.chamarEntradaAtual();
+	}	
+	
+
+	@GetMapping("/todos")
 	public List<QueLivroEntry> listarEntradas() {
 		return servico.listarEntradasQueLivros();
 	}

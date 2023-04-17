@@ -5,6 +5,8 @@ import java.util.List;
 import alexandria.backend.legere.core.model.QueLivroEntry;
 
 public interface QueLivroEntryService {
+	public QueLivroEntry chamarEntradaAtual();
+	
 	public List<QueLivroEntry> listarEntradasQueLivros();
 	public QueLivroEntry encontrarPorSequencial(Long id);
 	public QueLivroEntry  criarNovaEntrada(QueLivroEntry entidade);

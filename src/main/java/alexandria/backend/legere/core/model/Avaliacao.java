@@ -14,12 +14,10 @@ public class Avaliacao {
 	@Column(name="ID") private Long sequencial;
 	
 	@Column(name="Comment") private String cometario;
-
+	
 	@Column(name="Rating", length=2) private Integer satisfacao;
 
 	@Column(name="Recomendation") private String recomendacao;
-
-	@Column(name="fk_Livro") private Long fkIdRegistro;
 
 
 
@@ -55,19 +53,11 @@ public class Avaliacao {
 		this.recomendacao = recomendacao;
 	}
 
-	public Long getFkIdRegistro() {
-		return fkIdRegistro;
-	}
-
-	public void setFkIdRegistro(Long fkIdRegistro) {
-		this.fkIdRegistro = fkIdRegistro;
-	}
 	public Avaliacao() {}
 	public Avaliacao(Long id, String cometario, Integer satisfacao, String recomendacao, Long fkIdRegistro) {
 		this.sequencial = id;
 		this.cometario = cometario;
 		this.satisfacao = satisfacao;
 		this.recomendacao = recomendacao;
-		this.fkIdRegistro = fkIdRegistro;
 	}
 }

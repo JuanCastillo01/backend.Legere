@@ -35,9 +35,8 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	public Boolean verificarUsuario(Usuario entidade) {
-		Long idEntrada = entidade.getSequencial();
-		Optional<Usuario> foundUsuario = repositorio.findById(idEntrada);
-		return (foundUsuario.isPresent()) && entidade.getHashPassword().equals(foundUsuario.get().getHashPassword());
+		return null;
+		
 	}
 
 	@Override

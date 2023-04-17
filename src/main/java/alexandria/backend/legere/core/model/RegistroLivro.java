@@ -14,6 +14,10 @@ public class RegistroLivro {
 	@GeneratedValue
 	@Column(name="ID") private Long sequencial;
 	
+	@Column(name="FK_ENTRY") private Long entradaLivro;
+	
+	@Column(name="RAN", length=1) private String executado;
+	
 	public Long getSequencial() {
 		return sequencial;
 	}
@@ -22,12 +26,12 @@ public class RegistroLivro {
 		this.sequencial = sequencial;
 	}
 
-	public Long getFkEntradaLivro() {
-		return fkEntradaLivro;
+	public Long getEntradaLivro() {
+		return entradaLivro;
 	}
 
-	public void setFkEntradaLivro(Long fkEntradaLivro) {
-		this.fkEntradaLivro = fkEntradaLivro;
+	public void setEntradaLivro(Long fkEntradaLivro) {
+		this.entradaLivro = fkEntradaLivro;
 	}
 
 	public String getExecutado() {
@@ -38,17 +42,13 @@ public class RegistroLivro {
 		this.executado = executado;
 	}
 
-	@Column(name="FK_ENTRY") private Long fkEntradaLivro;
-	
-	@Column(name="RAN", length=1) private String executado;
-
 	
 	public RegistroLivro() {
 	}
 
 	public RegistroLivro(Long sequencial, Long fkEntradaLivro, String executado) {
 		this.sequencial = sequencial;
-		this.fkEntradaLivro = fkEntradaLivro;
+		this.entradaLivro = fkEntradaLivro;
 		this.executado = executado;
 	}
 }

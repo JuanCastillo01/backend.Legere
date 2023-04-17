@@ -9,5 +9,4 @@ public interface AvaliacaoService {
 	public  void deletar(Long id);
 	public  Avaliacao alterar(Avaliacao entity,Long id);
 	public  List<Avaliacao> listar();
-	public  List<Avaliacao> filtrarPorRegistro(Long id);
 }
