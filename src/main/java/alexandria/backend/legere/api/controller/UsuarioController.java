@@ -1,4 +1,4 @@
-package alexandria.backend.legere.api.controller.impl;
+package alexandria.backend.legere.api.controller;
 
 import java.util.List;
 
@@ -20,11 +20,11 @@ import alexandria.backend.legere.core.service.UsuarioService;
 @CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/api/Usuario/")
-public class UsuarioControllerImpl {
+public class UsuarioController {
 
 	private UsuarioService servico;
 	
-	public UsuarioControllerImpl(UsuarioService servico) {
+	public UsuarioController(UsuarioService servico) {
 		this.servico = servico;
 	}
 	

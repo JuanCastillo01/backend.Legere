@@ -1,4 +1,4 @@
-package alexandria.backend.legere.api.controller.impl;
+package alexandria.backend.legere.api.controller;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ import alexandria.backend.legere.core.service.RegistroLivroService;
 @CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/api/register")
-public class RegistroLivroControllerImpl{
+public class RegistroLivroController{
 
 	@Autowired
 	private RegistroLivroService servico;
